@@ -1,4 +1,4 @@
-# BD Multi-Platform Social Sentiment Evolution
+# Big-Data Multi-Platform Social Sentiment Evolution
 
 ## Overview
 
