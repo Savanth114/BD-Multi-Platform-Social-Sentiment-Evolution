@@ -36,8 +36,9 @@ BD Multi-Platform Social Sentiment Evolution is a Big Data and Machine Learning 
 
 ## Project Structure
 
+```text
 BD-Multi-Platform-Social-Sentiment-Evolution/
-
+│
 ├── backend/
 │   ├── app.py
 │   └── requirements.txt
@@ -64,6 +65,7 @@ BD-Multi-Platform-Social-Sentiment-Evolution/
 ├── download_dataset.py
 ├── README.md
 └── .gitignore
+```
 
 ## Dataset
 
