@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multi-Platform Sentiment Analysis Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- Top bar (no SA logo) -->
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <div>
+          <h1 class="app-title">Multi-Platform Social Media Sentiment Analysis</h1>
+          <p class="app-subtitle">
+            Big Data · PySpark · Machine Learning · Sentiment Analytics
+          </p>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <span class="badge">Mini Project</span>
+        <span class="badge secondary">Sentiment Analysis</span>
+      </div>
+    </header>
+
+    <!-- Main grid -->
+    <main class="main-grid">
+      <!-- Model performance -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Model Performance Overview</h2>
+          <p>Logistic Regression on multi-platform social media metadata</p>
+        </div>
+
+        <!-- Metric cards -->
+        <div class="metric-grid">
+          <div class="metric-card">
+            <span class="metric-label">Accuracy</span>
+            <span class="metric-value" id="accValue">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Precision</span>
+            <span class="metric-value" id="precValue">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Recall</span>
+            <span class="metric-value" id="recValue">--</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">F1 Score</span>
+            <span class="metric-value" id="f1Value">--</span>
+          </div>
+        </div>
+
+        <div class="chart-wrapper">
+          <h3 class="chart-title">Performance Metrics</h3>
+          <canvas id="metricsChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Sentiment distribution -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Sentiment Distribution</h2>
+          <p>Overall sentiment across all platforms in the dataset</p>
+        </div>
+
+        <div class="chart-wrapper">
+          <h3 class="chart-title">Label Distribution</h3>
+          <canvas id="labelChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Platform-wise sentiment -->
+      <section class="panel panel-wide">
+        <div class="panel-header header-with-controls">
+          <div>
+            <h2>Platform-wise Sentiment Analysis</h2>
+            <p>Compare sentiment patterns across Twitter, Reddit, Instagram, YouTube, TikTok, Facebook, etc.</p>
+          </div>
+          <div class="controls">
+            <label for="platformSelect">Platform:</label>
+            <select id="platformSelect"></select>
+          </div>
+        </div>
+
+        <div class="chart-wrapper">
+          <h3 class="chart-title" id="platformChartTitle">
+            Sentiment counts by category
+          </h3>
+          <canvas id="platformChart"></canvas>
+        </div>
+
+        <div class="table-wrapper">
+          <div class="table-header">
+            <h3>Platform Sentiment Breakdown</h3>
+            <p id="platformSummary" class="table-subtitle">
+              Select a platform to view its sentiment distribution.
+            </p>
+          </div>
+
+          <table id="platformTable">
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Sentiment Category</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody id="platformBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Built with PySpark, Flask, and Chart.js</span>
+      <span class="dot-separator">•</span>
+      <span>AI &amp; Big Data Mini Project</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
